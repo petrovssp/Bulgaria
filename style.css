@@ -1,0 +1,102 @@
+
+html, body {
+  margin: 0;
+  height: 100%;
+}
+#map {
+    height:90vh;
+}
+
+.grid-container {
+  display: grid;
+  gap: 5px;
+  grid-template-areas:
+  'header header' 
+  'left right';
+  grid-template-columns: 20vw auto;
+}
+
+.header {
+  grid-area: header;
+  border: 5px solid green;
+  font-size: 25px;
+}
+
+.left {
+  grid-area: left;
+  font-family: Arial, Helvetica, sans-serif;
+  border: 5px solid red;
+}
+
+.right {
+  grid-area: right;
+  border: 5px solid blue;
+}
+
+.basemaps {
+  margin-left: 15px;
+}
+
+.mymaps {
+  margin-left: 15px;
+}
+
+/* Позициониране на контейнера вдясно */
+.ol-scale-bar {
+  left: auto !important;
+  right: 15px !important;
+  bottom: 40px !important;
+  position: absolute !important;
+}
+
+/* Изчертаване на самата графична линия */
+.ol-scale-bar-inner {
+  display: flex !important;
+  flex-direction: row !important;
+  height: 8px !important;
+  border: 1px solid #333 !important;
+  background-color: rgba(255, 255, 255, 0.8) !important;
+}
+
+/* Деления (стъпки) на линията */
+.ol-scale-singlebar {
+  border-right: 1px solid #333 !important;
+  height: 100% !important;
+}
+
+/* Текст за разстоянията под линията (km/m) */
+.ol-scale-step-text {
+  position: absolute !important;
+  bottom: -18px !important;
+  font-size: 10px !important;
+  white-space: nowrap !important;
+  color: #000 !important;
+}
+
+/* Числен мащаб над линията (1 : X) */
+.ol-scale-text {
+  position: absolute !important;
+  top: -18px !important;
+  font-size: 11px !important;
+  font-weight: bold !important;
+  width: 100% !important;
+  text-align: center !important;
+  color: #000 !important;
+}
+
+.ol-mouse-position {
+  background-color: white;
+  top:37px;
+  right:40px;
+  position: absolute;
+}
+
+#Myprojection {
+  grid-area: right;
+  position: absolute;
+  left: unset;
+  right:33px;
+  top:85px;
+  z-index: 10;
+}
+

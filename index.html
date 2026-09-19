@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/x-icon" href="https://openlayers.org/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Using OpenLayers with Vite</title>
+
+    <!-- 1. Вашият локален CSS файл -->
+    <link rel="stylesheet" href="./style.css">
+
+    <!-- OpenLayers CSS & JS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ol@latest/dist/ol.css">
+    <script src="https://cdn.jsdelivr.net/npm/ol@latest/dist/ol.js"></script>
+
+    <!-- Proj4js (необходим за EPSG:7800 и EPSG:7801) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.15.0/proj4.js"></script>
+
+  </head>
+  <body>
+    <div class="grid-container">
+
+        <div class="header">
+          <img src="Capture.PNG" alt="" style="width: 60px; height: 60px; vertical-align: middle;">
+          <span style="vertical-align: middle;">Курсов проект на Стефан Петров, България</span>
+        </div>
+        
+        <div class="left">
+
+          <div class="basemaps">
+              <h3 class="title">Базови карти</h3>
+              <input type="radio" id="OSM" name="basepayerbutton" value="OSM" checked>
+              <lable for="OSM">Open Street Map</lable>
+              <br>
+              <input type="radio" id="googleSat" name="basepayerbutton" value="googleSat">
+              <label for="googleSat">Google Satellite</lable>
+          </div>
+
+        <div class="mymaps">
+          <h3 class="title">Потребителски слоеве</h3>
+          <input type="checkbox" id="0" name="Mun" value="Mun" checked>
+          <label for="Mun">Общини <button id="download0"><img src="./download.png" style="vertical-align: middle;"></button></label><br>
+          <input type="checkbox" id="1" name="rivers" value="rivers" checked>
+          <label for="rivers">Реки</label><br>
+          <input type="checkbox" id="2" name="Distr" value="Distr" checked>
+          <label for="Distr">Областна граница</label><br>
+          <input type="checkbox" id="3" name="admcent" value="admcent" checked>
+          <label for="admcent">Административни центрове</label><br>
+        </div>
+
+
+
+        </div>
+
+        <div class="right">
+           <div id="map"></div>
+           <form>
+            <select id="Myprojection">
+              <option value="EPSG:7801" selected>BGS2005 CCS</option>
+              <option value="EPSG:7800">BGS2005 UTM35</option>
+            </select>
+           </form>
+        </div>
+
+    </div>
+      <!-- Вашият скрипт с JS кода за картата -->
+      <script src="./main.js"></script>
+  </body>
+</html>
+
