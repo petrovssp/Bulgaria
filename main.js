@@ -55,7 +55,7 @@ for (let baseLayerElement of baseLayerElements) {
 // Добавяне на слоеве от Geoserver
 const district = new ol.layer.Tile({
   source: new ol.source.TileWMS({
-    url: 'http://localhost:8080/geoserver/Bulgaria/wms',
+    url: 'https://geos.ssp-bg.com/geoserver/Bulgaria/wms',
     params: { 'VERSION': '1.1.0', 'tiled': true, 'LAYERS': 'Bulgaria:Oblasti' },
     serverType: 'geoserver'
   }),
@@ -64,7 +64,7 @@ const district = new ol.layer.Tile({
 
 const mun = new ol.layer.Tile({
   source: new ol.source.TileWMS({
-    url: 'http://localhost:8080/geoserver/Bulgaria/wms',
+    url: 'https://geos.ssp-bg.com/geoserver/Bulgaria/wms',
     params: { 'VERSION': '1.1.0', 'tiled': true, 'LAYERS': 'Bulgaria:Munisipalities' },
     serverType: 'geoserver'
   }),
@@ -73,7 +73,7 @@ const mun = new ol.layer.Tile({
 
 const rivers = new ol.layer.Tile({
   source: new ol.source.TileWMS({
-    url: 'http://localhost:8080/geoserver/Bulgaria/wms',
+    url: 'https://geos.ssp-bg.com/geoserver/Bulgaria/wms',
     params: { 'VERSION': '1.1.0', 'tiled': true, 'LAYERS': 'Bulgaria:Reki' },
     serverType: 'geoserver'
   }),
@@ -82,7 +82,7 @@ const rivers = new ol.layer.Tile({
 
 const settlments = new ol.layer.Tile({
   source: new ol.source.TileWMS({
-    url: 'http://localhost:8080/geoserver/Bulgaria/wms',
+    url: 'https://geos.ssp-bg.com/geoserver/Bulgaria/wms',
     params: { 'VERSION': '1.1.0', 'tiled': true, 'LAYERS': 'Bulgaria:Settlement' },
     serverType: 'geoserver'
   }),
@@ -146,7 +146,7 @@ if (projectionSelect) {
 const downloadBtn = document.getElementById('download0');
 if (downloadBtn) {
   downloadBtn.addEventListener('click', function () {
-    const url = "http://localhost:8080/geoserver/Bulgaria/ows" +
+    const url = "https://geos.ssp-bg.com/geoserver/Bulgaria/ows" +
                 "?service=WFS&version=1.0.0&request=GetFeature" +
                 "&typeName=Bulgaria%3AMunisipalities&outputFormat=application%2Fjson";
 
