@@ -19,12 +19,8 @@ const map = new ol.Map({
 
 // Добавяне на базови слоеве в картата
 const osmMap = new ol.layer.Tile({
-  source: new ol.source.XYZ({
-    url: 'https://{a-c}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png',
-    attributions: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>'
-  }),
-  visible: true,
-  title: 'OSM'
+    source: new ol.source.OSM(),
+    visible: true
 });
 
 
